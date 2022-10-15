@@ -27,7 +27,7 @@ export async function loginUser(userData) {
 }
 
 export async function getUser() {
-  return await (await fetch(API_URL + "/auth/getUser", { credentials: "include" })).json();
+  return await (await fetch(`${API_URL}/auth/getUser`, { credentials: "include" })).json();
 }
 
 export async function getUserActiveSells(id) {
