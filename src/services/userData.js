@@ -15,7 +15,7 @@ export async function registerUser(userData) {
 
 export async function loginUser(userData) {
   return (
-    await fetch(`/auth/login`, {
+    await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export async function getUserWishlist() {
 
 export async function editUserProfile(id, data) {
   return (
-    await fetch(`/user/edit-profile/${id}`, {
+    await fetch(`${API_URL}/user/edit-profile/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -59,6 +59,6 @@ export async function editUserProfile(id, data) {
 
 export async function getUserById(id) {
   return await (
-    await fetch(API_URL + `/user/getUserById/${id}`, { credentials: "include" })
+    await fetch(`${API_URL}/user/getUserById/${id}`, { credentials: "include" })
   ).json();
 }

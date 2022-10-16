@@ -45,11 +45,11 @@ export async function editProduct(id, product) {
 }
 
 export async function activateSell(id) {
-  return (await fetch(`/products/enable/${id}`)).json();
+  return (await fetch(`${API_URL}/products/enable/${id}`)).json();
 }
 
 export async function archiveSell(id) {
-  return (await fetch(`/products/archive/${id}`)).json();
+  return (await fetch(`${API_URL}/products/archive/${id}`)).json();
 }
 
 export async function wishProduct(id) {
