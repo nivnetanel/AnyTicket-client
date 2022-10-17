@@ -66,7 +66,7 @@ function Aside({ params, history }) {
               </OverlayTrigger>
             </h1>
           )}
-          {params.price && <h1 id="price-heading">{params.price.toFixed(2)}€</h1>}
+          {params.price && <h1 id="price-heading">{params.price.toFixed(2)}₪</h1>}
         </div>
         {params.isAuth ? (
           <>

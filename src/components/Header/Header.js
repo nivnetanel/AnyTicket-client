@@ -14,7 +14,16 @@ function Header() {
       <div className="container">
         <Navbar.Brand>
           <NavLink className="navbar-brand" to="/">
-            AnyTicket
+            <img
+              src="https://res.cloudinary.com/dd5irg4pr/image/upload/v1666001282/ajdr75s9urjeshqtyhqz.png"
+              style={{
+                height: "28px",
+                width: "auto",
+                display: "block",
+                WebkitTransition: "all 0.3s ease-out",
+                transition: "all 0.3s ease-out",
+              }}
+            />
           </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -25,10 +34,6 @@ function Header() {
           </Nav>
           {userData ? (
             <Nav>
-              <NavLink className="nav-item" id="addButton" to="/messages">
-                <BsFillEnvelopeFill />
-              </NavLink>
-
               <NavLink className="nav-item" id="addButton" to="/add-product">
                 <OverlayTrigger
                   key="bottom"
