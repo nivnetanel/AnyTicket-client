@@ -1,4 +1,20 @@
+
+
 # [👋 live demo 👋](https://anyticket.netlify.app/)
+
+# Tech Stack
+
+![MERN stack](https://res.cloudinary.com/silenceiv/image/upload/c_fill,h_205,w_512/v1617484581/mern_sakbwj.png)
+
+- MERN (MongoDB, Express.js, React, and Node.js);
+- [Cloudinary](https://cloudinary.com/) as a file storage cloud API;
+- [Unsplash](https://unsplash.com/) as image provider;
+- [React-Bootstrap](https://react-bootstrap.github.io/);
+- Responsive Design;
+- UX & UI;
+- Validation and error handling.
+
+
 
 # Getting Started with Create React App
 
