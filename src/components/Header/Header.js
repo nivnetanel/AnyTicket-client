@@ -10,7 +10,7 @@ function Header() {
   const { userData, setUserData } = useContext(Context);
 
   return (
-    <Navbar collapseOnSelect bg="light" variant="light">
+    <Navbar collapseOnSelect>
       <div className="container">
         <Navbar.Brand>
           <NavLink className="navbar-brand" to="/">
@@ -23,6 +23,7 @@ function Header() {
                 WebkitTransition: "all 0.3s ease-out",
                 transition: "all 0.3s ease-out",
               }}
+              alt="main image"
             />
           </NavLink>
         </Navbar.Brand>

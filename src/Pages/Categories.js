@@ -52,10 +52,10 @@ function Categories({ match }) {
         setQuery(e.target.value)
     }
 
-      return (
+    return (
         <>
             <div id="sider">
-                <input className="col-lg-6" type="text" placeholder="Search..." name="search" value={query} onChange={handleSearch} />
+                <input className="col-lg-6" type="text" placeholder="Find your ticket..." name="search" value={query} onChange={handleSearch} />
             </div>
             <CategoriesNav />
             <div className="container">

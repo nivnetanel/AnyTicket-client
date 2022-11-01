@@ -114,13 +114,12 @@ function Edit({ match, history }) {
                             <Form.Label>Category</Form.Label>
                             <Form.Control as="select" value={product.category} name="category" onChange={onChangeHandler} required >
                                 <option>Choose...</option>
-                                <option>properties</option>
-                                <option>auto</option>
-                                <option>electronics</option>
-                                <option>clothes</option>
-                                <option>toys</option>
-                                <option>home</option>
-                                <option>garden</option>
+                                <option>Flights</option>
+                                <option>Vacation</option>
+                                <option>Concert</option>
+                                <option>Sport</option>
+                                <option>Hotel</option>
+                                <option>Other</option>
                             </Form.Control>
                         </Form.Group>
 

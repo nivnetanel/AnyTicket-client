@@ -1,19 +1,20 @@
 #sider {
-  background-image: url("https://res.cloudinary.com/dd5irg4pr/image/upload/v1665964536/rocco-dipoppa-_uDj_lyPVpA-unsplash_cjzil9.jpg");
+  background-image: url("https://res.cloudinary.com/dd5irg4pr/image/upload/v1667231295/berg_wtwq1c.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250px;
+  height: 390px;
   text-align: center;
   vertical-align: middle;
   padding: 113px;
 }
 
-#sider > input {
+#sider > input { 
   overflow: visible;
   border-radius: 50px;
   border: 1px;
   font-size: 18pt;
+  /*Search Bar*/
   background-image: url("https://res.cloudinary.com/silenceiv/image/upload/v1616775441/search-icon_i5dy7o.png");
   background-repeat: no-repeat;
   height: 55px;
