@@ -60,7 +60,7 @@ const CategoriesNav = () => {
     <div class="button-images">
       <div class="one_fourth">
         <div class="button-container">
-          <Link to="/categories/Hotel">SSSSS</Link>
+          <Link to="/categories/Hotel">Hotel</Link>
           <img src="https://cf.bstatic.com/xdata/images/landmark/square250/228373.jpg?k=5835b421a7ce1614ef58df8eb4cab4822ecf22e4ad1016c9c1f145fa2ccd2d53&o=" />
         </div>
       </div>
