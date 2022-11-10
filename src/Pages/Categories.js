@@ -8,9 +8,13 @@ import { BiSortDown, BiSort, BiDownArrowAlt, BiUpArrowAlt, BiSortUp } from 'reac
 import '../components/Siders/SearchSider.css'
 import '../components/Categories/Categories.css';
 import '../components/ProductCard/ProductCard.css';
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Categories({ match }) {
+    
     let currentCategory = match.params.category;
+    
     const [products, setProduct] = useState([])
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
@@ -18,19 +22,21 @@ function Categories({ match }) {
     const [sort, setSort] = useState('oldest');
 
     useEffect(() => {
+       
         setPage(1);
         setLoading(true);
         setQuery("")
         getAll(1, currentCategory)
-            .then(res => {
-                setProduct(res.products);
-                setLoading(false);
-                setPage(page => page + 1);
-                setQuery("");
-            })
-            .catch(err => console.log(err));
+        .then(res => {
+            setProduct(res.products);
+            setLoading(false);
+            setPage(page => page + 1);
+            setQuery("");
+        })
+        .catch(err => console.log(err));
     }, [currentCategory, setProduct])
-
+    
+   
     useEffect(() => {
         setPage(1);
         setLoading(true);
@@ -70,8 +76,12 @@ function Categories({ match }) {
                         <Dropdown.Item onClick={() => { setSort('biggerPrice') }}>Price <BiSortUp /> </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+                
+                
+                    
                 {!loading ?
                     <InfiniteScroll
+                        
                         dataLength={products.length}
                         next={() => {
                             if (query === "") {

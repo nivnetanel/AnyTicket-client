@@ -1,13 +1,102 @@
+#categories {
+  text-align: center;
+  padding: 5%;
+}
 
+#categories>h1 {
+  font-family: "Helvetica Neue";
+  text-fill: linear-gradient(blue, lime);
+  margin-bottom: 7%;
+}
+
+#categories svg {
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+
+#categories a button{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#properties>svg {
+  color: orange;
+}
+
+#auto>svg {
+  color: #4a88f9;
+}
+
+#home>svg {
+  color: #f95a5a;
+}
+
+#clothes>svg {
+  color: black;
+}
+
+#toys>svg {
+  color: #f57ecb;
+}
+
+#electronics>svg {
+  color: green;
+}
+
+
+.spinner {
+  text-align: center;
+}
+
+#dropdown-sort {
+  padding-bottom: 20px;
+  margin-top: -25px;
+}
+
+#dropdown-sort button {
+  border: 1px solid gray;
+  width: 110px;
+}
+
+#dropdown-sort button svg {
+  font-size: 14pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 body {
     font-size: 16px;
+    
   }
   
 
   .button-images {
   max-width: 650px;
   margin: 75px auto;
-    
+  position: relative;
 
     
   }
@@ -19,6 +108,7 @@ body {
   padding: 0;
   border-radius:50%; 
   overflow:hidden; 
+  display: inline-block;
   }
   
   
@@ -32,7 +122,13 @@ body {
    
     }
   
-  
+    
+  #show-all-button{
+    position: relative;
+    text-align: center;
+    overflow:hidden; 
+
+  }
   .button-container a {
     transition: all 0.2s ease-out;
     border-radius:500%; 
@@ -63,8 +159,9 @@ body {
   
   
   /*Columns*/
-  .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .two_sixth {
+  /* .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .two_sixth {
   position: relative;
+  text-align: center;
   margin-right: 11%;
   float: left;
   min-height: 1px;
@@ -114,4 +211,4 @@ body {
   width: 100%;
   }
 
-  
+   */ 
