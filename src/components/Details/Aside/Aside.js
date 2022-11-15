@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  Button,
-  Modal,
-  Form,
-  OverlayTrigger,
-  Tooltip,
-  Col,
-} from "react-bootstrap";
-import { saveAs } from "file-saver";
+import { Button, Modal, Form, OverlayTrigger, Tooltip, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { RiMessage3Fill } from "react-icons/ri";
 import { GrEdit } from "react-icons/gr";
@@ -51,19 +43,8 @@ function Aside({ params, history }) {
         history.push(`/messages/${res.messageId}`);
       })
       .catch((err) => console.log(err));
-    
   };
 
-
-
-  const downloadEmployeeData = () => {
-    saveAs(
-      params.pdf,
-      "TIcket"
-    );
-  
-	}
-  
   return (
     <aside>
       <div className="product-details-seller">
@@ -71,41 +52,26 @@ function Aside({ params, history }) {
           <h4 id="product-price-heading">Product Price </h4>
           {params.isSeller && (
             <h1>
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>Edit the selling</Tooltip>}
-              >
+              <OverlayTrigger placement="top" overlay={<Tooltip>Edit the selling</Tooltip>}>
                 <span id="edit-icon">
-                  <Link
-                    to={`/categories/${params.category}/${params._id}/edit`}
-                  >
+                  <Link to={`/categories/${params.category}/${params._id}/edit`}>
                     <GrEdit />
                   </Link>
                 </span>
               </OverlayTrigger>
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>Archive</Tooltip>}
-              >
+              <OverlayTrigger placement="top" overlay={<Tooltip>Archive</Tooltip>}>
                 <span id="archive-icon" onClick={handleShowArchive}>
                   <MdArchive />
                 </span>
               </OverlayTrigger>
             </h1>
           )}
-          {params.price && (
-            <h1 id="price-heading">{params.price.toFixed(2)}₪</h1>
-          )}
+          {params.price && <h1 id="price-heading">{params.price.toFixed(2)}₪</h1>}
         </div>
         {params.isAuth ? (
           <>
             {!params.isSeller && (
-              <Button
-                variant="dark"
-                className="col-lg-10"
-                id="btnContact"
-                onClick={handleShow}
-              >
+              <Button variant="dark" className="col-lg-10" id="btnContact" onClick={handleShow}>
                 <RiMessage3Fill />
                 Contact Seller
               </Button>
@@ -128,6 +94,17 @@ function Aside({ params, history }) {
                   <FaSellsy /> {params.createdSells} sells in total
                 </p>
               </Col>
+
+              <Link
+                to={{
+                  pathname: `/checkout/${params._id}`,
+                  state: params,
+                }}
+              >
+                <Button floated="left" size="big" color="blue">
+                  Checkout
+                </Button>
+              </Link>
             </Link>
           </>
         ) : (
@@ -143,12 +120,7 @@ function Aside({ params, history }) {
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Control
-                as="textarea"
-                name="textarea"
-                onChange={handleMsgChange}
-                rows={3}
-              />
+              <Form.Control as="textarea" name="textarea" onChange={handleMsgChange} rows={3} />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -168,11 +140,10 @@ function Aside({ params, history }) {
         </Modal.Header>
         <Modal.Body>
           <p>
-            By clicking <strong>Archive</strong>, this sell will change it's
-            status to <strong>Archived</strong>, which means that no one but you
-            will be able see it. You may want to change the status to{" "}
-            <strong>Actived</strong> if you have sold the item or you don't want
-            to sell it anymore.
+            By clicking <strong>Archive</strong>, this sell will change it's status to{" "}
+            <strong>Archived</strong>, which means that no one but you will be able see it. You may
+            want to change the status to <strong>Actived</strong> if you have sold the item or you
+            don't want to sell it anymore.
           </p>
           Don't worry, you can unarchive it at any time from Profile - Sells!
         </Modal.Body>
@@ -185,10 +156,6 @@ function Aside({ params, history }) {
           </Button>
         </Modal.Footer>
       </Modal>
-      <button onClick={downloadEmployeeData}>Download</button>
-
-
-    
     </aside>
   );
 }
