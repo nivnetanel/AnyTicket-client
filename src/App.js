@@ -12,11 +12,11 @@ import Details from "./Pages/Details";
 import Edit from "./Pages/Edit";
 import CreateSell from "./Pages/CreateSell";
 import EditProfile from "./Pages/EditProfile";
-import Error404 from "./Pages/Error404";
 import Messages from "./Pages/Messages";
+import Checkout from "./Pages/Checkout";
+import Error404 from "./Pages/Error404";
 
 function App() {
-  //   console.log(`App is running in ${REACT_APP_ENV} environment`);
   return (
     <>
       <Header />
@@ -33,6 +33,7 @@ function App() {
         <Route path="/profile/:id/edit" exact component={EditProfile} />;
         <Route path="/messages" exact component={Messages} />;
         <Route path="/messages/:id" exact component={Messages} />;
+        <Route path="/checkout/:id" exact component={Checkout} />
         <Route component={Error404} />
       </Switch>
       <Footer />
