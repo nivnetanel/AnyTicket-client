@@ -10,7 +10,7 @@ export const ContextStore = ({ children }) => {
 
   useEffect(() => {
     // if (cookies.USER_SESSION) {
-    fetch(`${API_URL}/auth/getUser`)
+    fetch(`${API_URL}/auth/getUser`, { credentials: "include" })
       .then((res) => res.json())
       .then((res) => {
         return setUserData(res.user);
