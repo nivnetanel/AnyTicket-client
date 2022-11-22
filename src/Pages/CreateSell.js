@@ -36,29 +36,35 @@ class AddProduct extends Component {
     }
   }
 
-  
   async onSubmitHandler(e) {
     e.preventDefault();
     let { title, price, description, city, category, image, pdf } = this.state;
     let obj = { title, price, description, city, category };
-    
-    await this.getBase64(image).then((data) => {  obj["image"] = data; }).catch((err) => console.error("Converting to base64 err: ", err))   
-    await this.getBase64(pdf).then((data) => { obj["pdf"] = data; }).catch((err) => console.error("Converting to base64 err: ", err))
-    
+
+    await this.getBase64(image)
+      .then((data) => {
+        obj["image"] = data;
+      })
+      .catch((err) => console.error("Converting to base64 err: ", err));
+
+    await this.getBase64(pdf)
+      .then((data) => {
+        obj["pdf"] = data;
+      })
+      .catch((err) => console.error("Converting to base64 err: ", err));
+
     this.setState({ loading: true });
     createProduct(obj)
-    .then((res) => {
+      .then((res) => {
         if (res.error) {
           this.setState({ loading: false });
           this.setState({ errors: res.error });
           this.setState({ alertShow: true });
         } else {
-          this.props.history.push(
-            `/categories/${category}/${res.productId}/details`
-          );
+          this.props.history.push(`/categories/${category}/${res.productId}/details`);
         }
-      }).catch((err) => console.error("Creating product err: ", err))
-        
+      })
+      .catch((err) => console.error("Creating product err: ", err));
   }
 
   async getBase64(file) {
@@ -154,22 +160,12 @@ class AddProduct extends Component {
 
               <Form.Group as={Col} controlId="formGridImage">
                 <Form.Label>Image</Form.Label>
-                <Form.Control
-                  name="image"
-                  type="file"
-                  required
-                  onChange={this.onChangeHandler}
-                />
+                <Form.Control name="image" type="file" required onChange={this.onChangeHandler} />
               </Form.Group>
             </Form.Row>
 
             <Form.Label>Add your Ticket</Form.Label>
-            <Form.Control
-              name="pdf"
-              type="file"
-              required
-              onChange={this.onChangeHandler}
-            />
+            <Form.Control name="pdf" type="file" onChange={this.onChangeHandler} />
             {this.state.loading ? (
               <Button className="col-lg-12" variant="dark" disabled>
                 Please wait... <Spinner animation="border" />
@@ -177,9 +173,7 @@ class AddProduct extends Component {
             ) : (
               <Button className="col-lg-12" variant="dark" type="submit">
                 <h2 className="col-l">Add Post</h2>
-                <span className="read-accept">
-                  *By clicking this button you accept the terms!
-                </span>
+                <span className="read-accept">*By clicking this button you accept the terms!</span>
               </Button>
             )}
           </Form>
