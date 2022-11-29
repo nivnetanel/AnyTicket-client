@@ -29,6 +29,7 @@ body {
 .item-container .item-image img {
   height: 430px;
   width: 100%;
+  object-fit: scale-down;
 }
 
 .item-image {

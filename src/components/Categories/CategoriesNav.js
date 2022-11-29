@@ -8,9 +8,17 @@ import { TiSortAlphabetically } from 'react-icons/ti';
 import { MdHotel, MdFlight} from 'react-icons/md';
 import { CgMoreO } from "react-icons/cg";
 import { FaUmbrellaBeach } from "react-icons/fa";
-import { RiHotelFill,RiFootballLine } from "react-icons/ri";
+import { RiHotelFill, RiFootballLine } from "react-icons/ri";
 
-import {useRef} from 'react';
+
+import { useRef } from 'react';
+
+const img1 = "https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg";
+const img2 = "https://images.unsplash.com/photo-1604601815764-6d01fc6bebde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmxpZ2h0fGVufDB8fDB8fA%3D%3D&w=1000&q=80";
+const img3 = "https://media.cntraveler.com/photos/60e612ae0a709e97d73d9c60/1:1/w_3840,h_3840,c_limit/Beach%20Vacation%20Packing%20List-2021_GettyImages-1030311160.jpg";
+const img4 = "https://images.unsplash.com/photo-1557787163-1635e2efb160?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbmNlcnR8ZW58MHx8MHx8&w=1000&q=80";
+const img5 = "https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?w=2000";
+const img6 = "https://dmjetdubai.com/wp-content/uploads/2021/04/Polaris-RZR-XP-PRO-MAX-4-places-Full-Option.png";
 
 const CategoriesNav = () => {
  
@@ -20,33 +28,32 @@ const CategoriesNav = () => {
     ref.current?.scrollIntoView({behavior: 'smooth'});
   };
  
-  return (
+    return (
+        
 <div className="container" id="categories">
             <h1>Categories</h1>
             <div>
-            <Link to="/categories/all">
-                <Button variant="outline-dark" id="all" onClick={handleClick}><TiSortAlphabetically />All</Button>{' '}
-
-            </Link>
             
             <Link to="/categories/Hotel">
-                <Button variant="outline-dark" id="properties" onClick={handleClick}><MdHotel />Hotel</Button>{' '}
+                    <Button id="close-image" style={{backgroundImage: `url(${img1})` }} onClick={handleClick}>Hotel</Button>
+              </Link>
+              <Link to="/categories/Flight">
+                    <Button id="close-image" style={{backgroundImage: `url(${img2})` }} onClick={handleClick}>Flight</Button>
+              </Link>
+              <Link to="/categories/Vacation">
+                    <Button id="close-image" style={{backgroundImage: `url(${img3})` }} onClick={handleClick}>Vacation</Button>
+              </Link>
+              <Link to="/categories/Concert">
+                    <Button id="close-image" style={{backgroundImage: `url(${img4})` }} onClick={handleClick}>Concert</Button>
+              </Link>
+              <Link to="/categories/Sport">
+                    <Button id="close-image" style={{backgroundImage: `url(${img5})` }} onClick={handleClick}>Sport</Button>
+              </Link>
+              <Link to="/categories/Other">
+                    <Button id="close-image"style={{backgroundImage: `url(${img6})` }} onClick={handleClick}>Other</Button>
             </Link>
-            <Link to="/categories/Flight">
-                <Button variant="outline-dark" id="auto" onClick={handleClick}><MdFlight />Flight</Button>{' '}
-            </Link>
-            <Link to="/categories/Vacation">
-                <Button variant="outline-dark" id="home" onClick={handleClick}><FaUmbrellaBeach />Vacation</Button>{' '}
-            </Link>
-            <Link to="/categories/Concert">
-                <Button variant="outline-dark" id="electronics" onClick={handleClick}><GiMicrophone />Concert</Button>{' '}
-            </Link>
-            <Link to="/categories/Sport">
-                <Button variant="outline-dark" id="clothes" onClick={handleClick}><RiFootballLine />Sport</Button>{' '}
-            </Link>
-            <Link to="/categories/Other">
-                <Button variant="outline-dark" id="toys" onClick={handleClick}><CgMoreO />Other</Button>{' '}
-        </Link>
+              
+                     
         <div style={{height: '2rem'}} />
 
         <div ref={ref}></div>
@@ -56,62 +63,4 @@ const CategoriesNav = () => {
     )
 }
 
-//     <div className="container" id="categories">
-//       <div class="button-images">
-//       <div class="one_fourth">
-//         <div class="button-container">
-//           <Link to="/categories/Hotel">Hotel</Link>
-//           <img src="https://cf.bstatic.com/xdata/images/landmark/square250/228373.jpg?k=5835b421a7ce1614ef58df8eb4cab4822ecf22e4ad1016c9c1f145fa2ccd2d53&o=" />
-//         </div>
-//       </div>
-//       <div class="one_fourth">
-//         <div class="button-container">
-//           <Link to="/categories/Flight">Flight</Link>
-        
-//           <img src="https://cdn.hswstatic.com/gif/fuel-dump-1.jpg" />
-//         </div>
-//       </div>
-//       <div class="one_fourth">
-//         <div class="button-container">
-//           <Link to="/categories/Vacation">Vacation</Link>
-//           <div class="button-image"> 		<img src="https://www.myluxurytravel.fr/wp-content/uploads/2019/07/adults-only-min-300x300.jpg" /></div>
-//         </div>
-//       </div>
-//       <div class="one_fourth">
-//         <div class="button-container">
-//           <Link to="/categories/Concert">Concert</Link>
-//           <img src="https://photos.bandsintown.com/thumb/8616419.jpeg" />
-//         </div>
-//       </div>
-//       <div class="one_fourth">
-//         <div class="button-container">
-//           <Link to="/categories/Sport">Sport</Link>
-          
-//           <img src="https://sunflowertents.com/wp-content/uploads/2017/11/Sport-Photo-300x300.jpg" />
-//         </div>
-//       </div>
-//       <div class="one_fourth last">
-//         <div class="button-container">
-//           <Link to="/categories/Other">Other</Link>
-//           <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/7a359c78-80d6-41f5-a666-760dea1b7533.__CR0,0,300,300_PT0_SX300_V1___.jpg" />
-//         </div>
-//       </div>
-
-//         <div class="clearboth"></div>
-//       </div>
-  
-//       <div>
-//       <Button class="container" onClick={handleClick} variant="outline-dark" >Scroll to element</Button>
-
-//       <div style={{height: '10rem'}} />
-
-//       <div ref={ref}></div>
-
-//       <div style={{height: '1rem'}} />
-
-//       </div>
-//     </div>
-    
-//   );
-// };
 export default CategoriesNav;
