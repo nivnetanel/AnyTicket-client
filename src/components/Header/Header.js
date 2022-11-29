@@ -15,16 +15,8 @@ function Header() {
       <div className="container">
         <Navbar.Brand>
           <NavLink className="navbar-brand" to="/">
-            <img
-              src="https://res.cloudinary.com/dd5irg4pr/image/upload/v1666001282/ajdr75s9urjeshqtyhqz.png"
-              style={{
-                height: "28px",
-                width: "auto",
-                display: "block",
-                WebkitTransition: "all 0.3s ease-out",
-                transition: "all 0.3s ease-out",
-              }}
-              alt="main image"
+            <img className="nav-logo" src="https://res.cloudinary.com/dd5irg4pr/image/upload/v1669128066/anyticket-high-resolution-logo-color-on-transparent-background_nhelaq.png" 
+              alt="Logo-img"
             />
           </NavLink>
         </Navbar.Brand>
