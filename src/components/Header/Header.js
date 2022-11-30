@@ -9,7 +9,6 @@ import "./Header.css";
 function Header() {
   const { userData, setUserData } = useContext(Context);
 
-  
   return (
     <Navbar collapseOnSelect>
       <div className="container">
@@ -94,6 +93,13 @@ function Header() {
               </NavLink>
               <NavLink className="nav-item" id="nav-sign-up" to="/auth/register">
                 Sign Up
+              </NavLink>
+            </Nav>
+          )}
+          {userData?.admin && (
+            <Nav>
+              <NavLink className="nav-item" id="nav-profit" to="/profit">
+                Profit
               </NavLink>
             </Nav>
           )}
