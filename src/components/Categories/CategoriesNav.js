@@ -35,7 +35,7 @@ const CategoriesNav = () => {
             <div>
             
             <Link to="/categories/Hotel">
-                    <Button id="close-image" style={{backgroundImage: `url(${img1})` }} onClick={handleClick}>Hotel</Button>
+                    <Button  id="close-image" style={{backgroundImage: `url(${img1})` }} onClick={handleClick}>Hotel</Button>
               </Link>
               <Link to="/categories/Flight">
                     <Button id="close-image" style={{backgroundImage: `url(${img2})` }} onClick={handleClick}>Flight</Button>
