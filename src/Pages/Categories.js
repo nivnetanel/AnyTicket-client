@@ -56,7 +56,10 @@ function Categories({ match }) {
     const handleSearch = (e) => {
         e.preventDefault()
         setQuery(e.target.value)
+
+       
     }
+    
 
     return (
         <>
@@ -65,6 +68,7 @@ function Categories({ match }) {
             </div>
             <CategoriesNav />
             <div className="container">
+            
                 <Dropdown id="dropdown-sort">
                     <Dropdown.Toggle variant="light" id="dropdown-basic">
                         Sort <BiSort />
@@ -75,6 +79,9 @@ function Categories({ match }) {
                         <Dropdown.Item onClick={() => { setSort('lowerPrice') }}>Price <BiSortDown /></Dropdown.Item>
                         <Dropdown.Item onClick={() => { setSort('biggerPrice') }}>Price <BiSortUp /> </Dropdown.Item>
                     </Dropdown.Menu>
+                    <Link to="/categories/all">
+                    <Button variant="light" id="dropdown-basic">All</Button>
+                </Link>
                 </Dropdown>
                 
                 

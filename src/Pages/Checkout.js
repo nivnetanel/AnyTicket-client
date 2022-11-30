@@ -11,7 +11,7 @@ const Checkout = (props) => {
         <img src={props.img} />
         <div className="item-details">
           <h3 className="item-name"> {props.name} </h3>
-          <h2 className="item-price"> {props.price} </h2>
+          <h2 className="item-price"> {props.price} ₪</h2>
         </div>
       </div>
     </div>
