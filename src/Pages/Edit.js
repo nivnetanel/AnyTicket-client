@@ -3,8 +3,6 @@ import { Col, Form, Button, Spinner, Alert } from "react-bootstrap";
 import SimpleSider from "../components/Siders/SimpleSider";
 import { getSpecific, editProduct } from "../services/productData";
 
-import "../components/Edit/Edit.css";
-
 function Edit({ match, history }) {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
@@ -38,43 +36,29 @@ function Edit({ match, history }) {
     let { _id, title, price, description, city, category, image, pdf } = product;
     let obj = { title, price, description, city, category };
     setLoading(true);
-    if (true) {
-      await getBase64(image)
-        .then((data) => {
-          obj["image"] = data;
-        })
-        .catch((err) => console.error("Converting to base64 err: ", err));
+    await getBase64(image)
+      .then((data) => {
+        obj["image"] = data;
+      })
+      .catch((err) => console.error("Converting to base64 err: ", err));
 
-      await getBase64(pdf)
-        .then((data) => {
-          obj["pdf"] = data;
-        })
-        .catch((err) => console.error("Converting to base64 err: ", err));
+    await getBase64(pdf)
+      .then((data) => {
+        obj["pdf"] = data;
+      })
+      .catch((err) => console.error("Converting to base64 err: ", err));
 
-      await editProduct(_id, obj)
-        .then((res) => {
-          if (!res.error) {
-            history.push(`/categories/${category}/${_id}/details`);
-          } else {
-            setLoading(false);
-            setError(res.error);
-            setAlertShow(true);
-          }
-        })
-        .catch((err) => console.error("edit product err: ", err));
-    } else {
-      editProduct(_id, obj)
-        .then((res) => {
-          if (!res.error) {
-            history.push(`/categories/${category}/${_id}/details`);
-          } else {
-            setLoading(false);
-            setError(res.error);
-            setAlertShow(true);
-          }
-        })
-        .catch((err) => console.error("edit product err: ", err));
-    }
+    await editProduct(_id, obj)
+      .then((res) => {
+        if (!res.error) {
+          history.push(`/categories/${category}/${_id}/details`);
+        } else {
+          setLoading(false);
+          setError(res.error);
+          setAlertShow(true);
+        }
+      })
+      .catch((err) => console.error("edit product err: ", err));
   };
 
   function getBase64(file) {

@@ -133,7 +133,7 @@ class AddProduct extends Component {
                 <Form.Label>City</Form.Label>
                 <Form.Control
                   name="city"
-                  placeholder="Sofia"
+                  placeholder="Sderot"
                   required
                   onChange={this.onChangeHandler}
                 />
