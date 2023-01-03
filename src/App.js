@@ -16,13 +16,13 @@ import Messages from "./Pages/Messages";
 import Checkout from "./Pages/Checkout";
 import Profit from "./Pages/Profit";
 import Error404 from "./Pages/Error404";
-import FishingWrapper from "./components/Fishing/FishingWrapper";
+import FishingWrapper from "./components/Fishing/FishingWrapper.js"
 
 function App() {
   return (
     <>
       <Header />
-      <FishingWrapper />
+      <FishingWrapper/>
       <Switch>
         <Route path="/" exact component={Categories} />
         <Route path="/categories/:category" exact component={Categories} />
