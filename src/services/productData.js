@@ -18,6 +18,10 @@ export async function getSpecific(id) {
   return (await fetch(`${API_URL}/products/specific/${id}`, { credentials: "include" })).json();
 }
 
+export async function getRandomProducts() {
+  return (await fetch(`${API_URL}/random`)).json();
+}
+
 export async function createProduct(product) {
   return (
     await fetch(`${API_URL}/products/create`, {

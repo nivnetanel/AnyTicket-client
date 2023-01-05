@@ -40,7 +40,7 @@ function Messages({ match }) {
         if (isSelected) {
             setSelected(conversations.find(x => x.chats._id === chatId))
         }
-    }, [isSelected, chatId, setSelected])
+    }, [conversations])
 
     function handleMsgSubmit(e) {
         e.preventDefault();

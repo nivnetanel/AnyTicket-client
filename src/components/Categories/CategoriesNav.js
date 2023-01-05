@@ -1,14 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Categories.css'
-import { BsHouseDoorFill, BsFillHouseFill, BsFillPuzzleFill } from 'react-icons/bs'
-import { AiFillCar } from 'react-icons/ai';
-import { GiFlowerPot, GiClothes,GiMicrophone,GiSoccerField } from 'react-icons/gi';
-import { TiSortAlphabetically } from 'react-icons/ti';
-import { MdHotel, MdFlight} from 'react-icons/md';
-import { CgMoreO } from "react-icons/cg";
-import { FaUmbrellaBeach } from "react-icons/fa";
-import { RiHotelFill, RiFootballLine } from "react-icons/ri";
 
 
 import { useRef } from 'react';
